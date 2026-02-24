@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+body {
+  @apply bg-slate-50 text-slate-900 font-sans antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full border-4 border-transparent bg-clip-content hover:bg-slate-300 transition-colors;
+}
+
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-lg active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold py-2.5 px-6 rounded-xl transition duration-300 shadow-sm active:scale-95;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition duration-300 placeholder:text-slate-400;
+}
+
+.card {
+  @apply bg-white border border-slate-100 shadow-sm rounded-2xl p-6 hover:shadow-md transition duration-300;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-slate-900/70 backdrop-blur-md border border-slate-700/30;
+}
+
+/* Custom Animations for Glassmorphism Navbar */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.ripple-bg {
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+}
+
+@keyframes pulse-badge {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 71, 111, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(239, 71, 111, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 71, 111, 0);
+  }
+}
+
+.animate-pulse-badge {
+  animation: pulse-badge 2s infinite;
+}
+
+/* Scrollbar hiding for mobile horizontal elements if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hero Section Animations */
+@keyframes rotateCW {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCCW {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.4);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(6, 214, 160, 0);
+  }
+}
+
+@keyframes floatParticle {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+
+  25% {
+    transform: translate(10px, -20px);
+    opacity: 0.6;
+  }
+
+  75% {
+    transform: translate(-8px, 12px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float1 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(1deg);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(-1deg);
+  }
+}
+
+@keyframes float3 {
+
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation Utilities */
+.animate-rotate-cw {
+  animation: rotateCW 15s linear infinite;
+}
+
+.animate-rotate-ccw {
+  animation: rotateCCW 10s linear infinite;
+}
+
+.animate-slow-spin {
+  animation: slowSpin 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float-1 {
+  animation: float1 3s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float2 4s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float3 3.5s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+/* Premium Hero Animations (Iteration 2) */
+@keyframes blobMove1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(40px, 30px) scale(1.1);
+  }
+}
+
+@keyframes blobMove2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-30px, -40px) scale(1.08);
+  }
+}
+
+@keyframes blobMove3 {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+@keyframes ringPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(-0.5deg);
+  }
+}
+
+@keyframes pillFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Premium Animation Utilities */
+.animate-blob-1 {
+  animation: blobMove1 12s ease-in-out infinite alternate;
+}
+
+.animate-blob-2 {
+  animation: blobMove2 15s ease-in-out infinite alternate;
+}
+
+.animate-blob-3 {
+  animation: blobMove3 10s ease-in-out infinite alternate;
+}
+
+.animate-ring-pulse {
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 4s linear infinite;
+  background-size: 200% auto;
+}
+
+.animate-card-float {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.animate-pill-float {
+  animation: pillFloat 3s ease-in-out infinite;
+}
+
+.animate-slide-up-fade {
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
