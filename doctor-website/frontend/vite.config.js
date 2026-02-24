@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://https://doctor-website-1-mpw0.onrender.com',
+        target: 'http://https://doctor-website-1-mpw0.onrender.com/api',
         changeOrigin: true,
         secure: false,
       },
