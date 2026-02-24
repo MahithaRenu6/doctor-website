@@ -9,7 +9,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://doctor-website-nu.vercel.app/', // remove trailing slash for CORS
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 connectDB().then(() => {
     require('./seedDoctors')();
