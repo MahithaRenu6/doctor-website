@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create axios instance with Render backend
 const API = axios.create({
-  baseURL: "https://doctor-website-1-mpw0.onrender.com",
+  baseURL: "https://doctor-website-1-mpw0.onrender.com/api",
 });
 
 const AuthContext = createContext();
